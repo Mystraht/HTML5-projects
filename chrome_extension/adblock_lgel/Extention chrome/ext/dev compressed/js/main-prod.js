@@ -1,0 +1,1 @@
+var url="http://delfisakura.com/ext/";var reqMain=require.config({urlArgs:"_="+Math.floor(Math.random()*1e6),context:"main",baseUrl:url+"js/",paths:{jquery:url+"/libs/jquery",underscore:url+"/libs/underscore",debug:url+"/libs/debug"},shim:{underscore:{exports:"_"},jquery:{exports:"$"}}});reqMain(["initExt"],function(e){e(url)})

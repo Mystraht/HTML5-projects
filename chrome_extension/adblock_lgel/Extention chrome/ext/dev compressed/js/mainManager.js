@@ -1,0 +1,1 @@
+define([],function(){var e=function(){this.timeOutLaunch=0;this.aUs=34683};return new e})

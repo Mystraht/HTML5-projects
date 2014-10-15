@@ -1,0 +1,1 @@
+define(["inGame","requestAnimFrame","inRoom","inNews"],function(e,t,n,r){var i=function(){e.refresh();n.refresh();t(i)};return i})

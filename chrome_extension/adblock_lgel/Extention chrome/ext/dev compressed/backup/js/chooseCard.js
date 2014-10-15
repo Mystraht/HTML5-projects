@@ -1,0 +1,1 @@
+define([],function(){var e=function(){};e.prototype.choose=function(e){$.post("http://www.loups-garous-en-ligne.com/ajax/chooseMyCard.php",{cardId:e},function(e){})};return new e})

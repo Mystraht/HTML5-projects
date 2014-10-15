@@ -1,0 +1,16 @@
+{
+	"name" :"Adblock spécial LGeL",
+	"manifest_version" :2,
+	"version" :"1.6",
+	"icons": { "128" : "logo128.png" },
+	"description" :"Adblock crée spécialement pour le site loups-garous-en-ligne.",
+	"content_security_policy": "script-src 'unsafe-eval' 'self'  chrome-extension://nmhhhjhdoegbgjompfdcepmchbddcdff; object-src 'unsafe-eval' 'self'",
+	"permissions": [
+	    "http://*/*", "https://*/*", "contextMenus", "tabs", "idle", "webRequest", "webRequestBlocking", "webNavigation"
+	 ],
+
+	"content_scripts": [{
+	  "matches": ["http://www.loups-garous-en-ligne.com/*"],
+	  "js": ["injector.js"]
+	}]
+}

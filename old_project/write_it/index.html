@@ -1,0 +1,188 @@
+<!doctype HTML>
+<html>
+<head>
+	<title>
+	</title>
+	<style>
+	</style>
+</head>
+
+<body onkeydown="keyDown(event)" onmousemove="getMouseCoords(event);" onmousedown="mouseDown(event)" onmouseup="mouseUp(event)">
+<script src="gui.js"></script>
+<script src="function.js"></script>
+<script src="game_refresh.js"></script>
+<script src="class_box.js"></script>
+<script src="class_anime.js"></script>
+<script src="playground_refresh.js"></script>
+<script src="var_obj_inisialisation.js"></script>
+<script src="word_list.js"></script>
+<canvas id="playGround" style="position: absolute; left: 0px; top: 0px; "></canvas>
+<script>
+// Getting screen size
+var screenSize = {
+	x : window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
+	y : window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+}
+
+// Getting the canvas
+var playGround = document.getElementById('playGround');
+var ctx = playGround.getContext('2d');
+
+// Setting canvas size
+
+playGround.width = screenSize.x;//1366;
+playGround.height = screenSize.y//768;
+
+// Animation function
+requestAnimFrame = (function() {
+return window.requestAnimationFrame ||
+window.webkitRequestAnimationFrame ||
+window.mozRequestAnimationFrame ||
+window.oRequestAnimationFrame ||
+window.msRequestAnimationFrame ||
+function(/* function FrameRequestCallback */ callback, /* DOMElement Element */ element) {
+window.setTimeout(callback, 1000/60); // 60 FPS
+}; })();
+
+// Keyboard object
+var keyBoard = 
+{
+	left : 0,
+	right : 0,
+	up : 0,
+	bot : 0,
+	space : 0,
+	lettre : 0,
+}
+
+var mouse = {
+	x : 0,
+	y : 0,
+	button : 0,
+}
+
+// Checking inputs
+function keyDown(event)
+{
+if (event.keyCode == 32) {keyBoard.lettre = "space";}
+if (event.keyCode == 65) {keyBoard.lettre = "a";}
+if (event.keyCode == 66) {keyBoard.lettre = "b";}
+if (event.keyCode == 67) {keyBoard.lettre = "c";}
+if (event.keyCode == 68) {keyBoard.lettre = "d";}
+if (event.keyCode == 69) {keyBoard.lettre = "e";}
+if (event.keyCode == 70) {keyBoard.lettre = "f";}
+if (event.keyCode == 71) {keyBoard.lettre = "g";}
+if (event.keyCode == 72) {keyBoard.lettre = "h";}
+if (event.keyCode == 73) {keyBoard.lettre = "i";}
+if (event.keyCode == 74) {keyBoard.lettre = "j";}
+if (event.keyCode == 75) {keyBoard.lettre = "k";}
+if (event.keyCode == 76) {keyBoard.lettre = "l";}
+if (event.keyCode == 77) {keyBoard.lettre = "m";}
+if (event.keyCode == 78) {keyBoard.lettre = "n";}
+if (event.keyCode == 79) {keyBoard.lettre = "o";} 
+if (event.keyCode == 80) {keyBoard.lettre = "p";}
+if (event.keyCode == 81) {keyBoard.lettre = "q";}
+if (event.keyCode == 82) {keyBoard.lettre = "r";}
+if (event.keyCode == 83) {keyBoard.lettre = "s";}
+if (event.keyCode == 84) {keyBoard.lettre = "t";}
+if (event.keyCode == 85) {keyBoard.lettre = "u";}
+if (event.keyCode == 86) {keyBoard.lettre = "v";}
+if (event.keyCode == 87) {keyBoard.lettre = "w";}
+if (event.keyCode == 88) {keyBoard.lettre = "x";}
+if (event.keyCode == 89) {keyBoard.lettre = "y";}
+if (event.keyCode == 90) {keyBoard.lettre = "z";}
+if (event.keyCode == 13) {keyBoard.lettre = "enter";}
+}
+
+/*function keyUp(event)
+{
+	switch(event.keyCode)
+	{
+		case 81:
+			keyBoard.left = 0;
+		break;
+		case 90:
+			keyBoard.up = 0;
+		break;
+		case 68:
+			keyBoard.right = 0;
+		break;
+		case 83:
+			keyBoard.bot = 0;
+		break;
+		case 32:
+			keyBoard.space = 0;
+		break;
+	}
+}*/
+
+function input() {
+	if (keyBoard.left)
+	{
+		
+	}
+	if (keyBoard.right)
+	{
+		
+	}
+	if (keyBoard.bot)
+	{
+		
+	}
+	if (keyBoard.up)
+	{
+		
+	}
+}
+
+function getMouseCoords(event) {
+	mouse.x = event.clientX; 
+   	mouse.y = event.clientY; 
+}
+
+function mouseDown(event) {
+	mouse.button = 1;
+}
+
+function mouseUp(event) {
+	mouse.button = 0;
+}
+
+function handling()
+{
+	screenSize = {
+	x : window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
+	y : window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+	}
+	playGround.width = screenSize.x;//1366;
+	playGround.height = screenSize.y//768;
+}
+
+ function animate()
+{
+	// O HAI
+}
+
+
+function run()
+{
+	input();
+	handling();
+	animate();
+	render();
+	requestAnimFrame(run);
+}
+
+function render()
+{
+	ctx.fillStyle = "#FFF";
+	ctx.fillRect(0,0,screenSize.x,screenSize.y); // cleanage du canvas
+	GAMErefresh();
+}
+
+var_obj_inisialisation();
+run();
+
+</script>
+</body>
+</html>
